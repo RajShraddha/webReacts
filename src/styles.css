@@ -1,4 +1,67 @@
 .App {
   font-family: sans-serif;
-  text-align: center;
+  text-align: justify;
+}
+
+.mainDiv {
+  display: inline-flex;
+  margin-left: 0px;
+  padding: 0px;
+}
+
+.section1 {
+  margin-right: 50px;
+  margin-left: 0px;
+}
+
+.cardHeader {
+  display: inline-flex;
+  padding-left: 0px;
+}
+
+.card {
+  margin-left: 0px;
+  margin-right: 50px;
+  height: 200px;
+  width: 200px;
+  box-shadow: 5px 5px grey;
+  text-align: justify;
+}
+
+#content {
+  font-size: 14px;
+}
+
+.btn {
+  background-color: greenyellow;
+  color: black;
+  border-color: green;
+  height: 35px;
+}
+
+.section2 {
+  margin-left: 150px;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+td {
+  padding: 8px;
+}
+thead,
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.678);
+}
+
+tr:nth-child(odd) {
+  background-color: grey;
+}
+
+thead,
+tr {
+  color: white;
+  font-size: 14px;
 }
