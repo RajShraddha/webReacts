@@ -71,6 +71,8 @@ class Employee extends React.Component {
     return (
       <div>
         <h3 style={{ textAlign: "center" }}>Employee Details</h3>
+        <br />
+        <h5>{this.props.message}</h5>
         {this.EmpArr.map((emp) => {
           return this.createCard(emp);
         })}
