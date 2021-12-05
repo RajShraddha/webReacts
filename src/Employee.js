@@ -31,7 +31,7 @@ class Employee extends React.Component {
     var note = null;
 
     if (emp.age < 25) {
-      note = <span>-fresher</span>;
+      note = <span style={{ color: "crimson" }}>-fresher</span>;
     }
 
     if (this.state.selectedEmp === emp.empId) {
@@ -45,20 +45,28 @@ class Employee extends React.Component {
     return (
       <div className="cardHeader">
         <div key={emp.empId} className="card">
-          <span>Name:{emp.empName}</span>
+          <span id="content">
+            <b>Name:</b> {emp.empName}
+          </span>
           <br />
-          <span>Experience:{emp.Experience}</span>
+          <span id="content">
+            <b>Experience:</b> {emp.Experience}
+          </span>
           <br />
-          <span>Salary:{emp.Salary}</span>
+          <span id="content">
+            <b>Salary:</b> {emp.Salary}
+          </span>
           <br />
-          <span>Age:{emp.age}</span>
+          <span id="content">
+            <b>Age:</b> {emp.age}
+          </span>
           {note}
           <br />
           <br />
           {achievements}
           <button
             onClick={() => this.setState({ selectedEmp: emp.empId })}
-            className="btn btn-primary"
+            className="btn btn-primary clickable"
           >
             Show achievements
           </button>
