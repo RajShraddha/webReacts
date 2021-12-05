@@ -2,6 +2,7 @@ import Datasource from "./Datasource";
 import Employee from "./Employee";
 //import Exercise1 from "./exercise1";
 import "./styles.css";
+import Timer from "./Timer";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <br />
 
       <Datasource></Datasource>
+      <Timer />
     </div>
   );
 }
