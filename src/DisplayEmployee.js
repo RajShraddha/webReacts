@@ -10,6 +10,7 @@ class DisplayEmployee extends React.Component {
     var note = null;
     var selectedEmp = null;
     var achievements = null;
+    // var noShow=false;
 
     // if(this.props.emp.age<25){
     //   note=<p>-Fresher</p>
@@ -21,6 +22,10 @@ class DisplayEmployee extends React.Component {
           <i>{this.props.achievements}</i>
         </p>
       );
+    }
+
+    if (this.state.selectedEmp === null) {
+      achievements = null;
     }
 
     return (
@@ -47,6 +52,14 @@ class DisplayEmployee extends React.Component {
             className="btn btn-secondary clickable"
           >
             Show achievements
+          </button>
+          <br />
+          <br />
+          <button
+            onClick={() => this.setState({ selectedEmp: null })}
+            className="btn btn-secondary clickable"
+          >
+            Hide achievements
           </button>
         </div>
       </div>

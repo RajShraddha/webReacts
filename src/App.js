@@ -15,7 +15,7 @@ export default function App() {
       <br />
 
       <Datasource></Datasource>
-      <Timer />
+      {/* <Timer /> */}
     </div>
   );
 }

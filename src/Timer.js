@@ -20,13 +20,20 @@ class Timer extends React.Component {
   }
 
   componentDidMount() {
-    setInterval(this.start, 1000);
+    var timing = setInterval(this.start, 1000);
   }
+
+  // componentWillUnmount(){
+
+  //   clearInterval();
+
+  // }
 
   render() {
     return (
       <div>
         <h3> Time Elapsed {this.state.ElapsedSeconds}</h3>
+        <button onClick={this.componentWillUnmount}>stop timer</button>
       </div>
     );
   }

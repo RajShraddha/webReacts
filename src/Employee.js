@@ -42,6 +42,10 @@ class Employee extends React.Component {
       );
     }
 
+    if (this.state.selectedEmp === null) {
+      achievements = null;
+    }
+
     return (
       <div className="cardHeader">
         <div key={emp.empId} className="card">
@@ -69,6 +73,14 @@ class Employee extends React.Component {
             className="btn btn-primary clickable"
           >
             Show achievements
+          </button>
+          <br />
+          <br />
+          <button
+            onClick={() => this.setState({ selectedEmp: null })}
+            className="btn btn-secondary clickable"
+          >
+            Hide achievements
           </button>
         </div>
       </div>
