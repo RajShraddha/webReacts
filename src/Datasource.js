@@ -20,7 +20,7 @@ class Datasource extends React.Component {
 
   render() {
     return (
-      <div className>
+      <div>
         <h3 style={{ textAlign: "center" }}>
           Employee Details <span> (using PROPS)</span>
         </h3>

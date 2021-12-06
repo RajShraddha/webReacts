@@ -4,6 +4,7 @@ class Timer extends React.Component {
   constructor(props) {
     super(props);
     this.start = this.start.bind(this);
+    // this.stop=this.stop.bind(this);
     this.state = {
       ElapsedSeconds: 0
     };
@@ -14,18 +15,24 @@ class Timer extends React.Component {
       ElapsedSeconds: this.state.ElapsedSeconds + 1
     });
   }
+  //HOW TO STOP THE TIMER????
+  // stop(){
+  //   this.setState({
+  //     ElapsedSeconds:0
+  //   })
+  // }
 
   componentWillMount() {
     alert("Component Mounted");
   }
 
   componentDidMount() {
-    var timing = setInterval(this.start, 1000);
+    var stop = setInterval(this.start, 1000);
   }
 
-  // componentWillUnmount(){
+  // componentWillUnmount=()=>{
 
-  //   clearInterval();
+  //   clearInterval(this.stop);
 
   // }
 
@@ -33,7 +40,7 @@ class Timer extends React.Component {
     return (
       <div>
         <h3> Time Elapsed {this.state.ElapsedSeconds}</h3>
-        <button onClick={this.componentWillUnmount}>stop timer</button>
+        {/* <button onClick={this.componentWillUnmount}>stop timer</button> */}
       </div>
     );
   }
