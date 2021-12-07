@@ -1,26 +1,25 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router";
 import "./styles.css";
 import Welcome from "./Welcome";
 import Datasource from "./Datasource";
 import Employee from "./Employee";
 
-export default function App() {
-  return (
-    <BrowserRouter>
+class App extends React.Component {
+  render() {
+    return (
       <div className="App">
-        <Welcome></Welcome>
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/employee" element={<Employee />} />
+          <Route path="/datasource" element={<Datasource />} />
+        </Routes>
       </div>
-      <Switch>
-        <Route path="/" component={Employee} />
-        <Route path="/employee" component={Employee} />
-        <Route path="/datasource" component={Datasource} />
-      </Switch>
-    </BrowserRouter>
-  );
+    );
+  }
 }
 
-//export default App;
+export default App;
 
 //import Timer from "./Timer";
 //import Exercise1 from "./exercise1";

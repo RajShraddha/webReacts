@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./styles.css";
 
 class Welcome extends React.Component {
@@ -9,19 +9,17 @@ class Welcome extends React.Component {
         <br />
         <h1 style={{ textAlign: "center" }}>WELCOME TO WebReacts</h1>
 
-        <Router>
-          <ul style={{ listStyleType: "none" }}>
-            <li>
-              <Link to={"/"}>Home</Link>
-            </li>
-            <li>
-              <Link to={"/employee"}>Employee Details</Link>
-            </li>
-            <li>
-              <Link to={"/datasource"}>Employee Props</Link>
-            </li>
-          </ul>
-        </Router>
+        <ul style={{ listStyleType: "none" }}>
+          <li>
+            <Link to={"/"}>Home</Link>
+          </li>
+          <li>
+            <Link to={"/employee"}>Employee Details</Link>
+          </li>
+          <li>
+            <Link to={"/datasource"}>Employee Props</Link>
+          </li>
+        </ul>
       </div>
     );
   }
