@@ -5,6 +5,7 @@ import Welcome from "./Welcome";
 import Datasource from "./Datasource";
 import Employee from "./Employee";
 import ParamHandle from "./ParamHandle";
+import Form from "./Form";
 
 class App extends React.Component {
   render() {
@@ -15,6 +16,7 @@ class App extends React.Component {
           <Route path="/employee" element={<Employee />} />
           <Route path="/datasource" element={<Datasource />} />
           <Route path="/ParamHandle/:id" element={<ParamHandle />} />
+          <Route path="/Form" element={<Form />} />
         </Routes>
       </div>
     );

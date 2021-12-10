@@ -24,6 +24,10 @@ class Welcome extends React.Component {
             <Link to={"/ParamHandle"}>Check Id</Link>
           </li>
         </ul>
+
+        <Link to={"/Form"}>
+          <button type="button">Click to get the form</button>
+        </Link>
       </div>
     );
   }
