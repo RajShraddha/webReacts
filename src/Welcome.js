@@ -19,6 +19,10 @@ class Welcome extends React.Component {
           <li>
             <Link to={"/datasource"}>Employee Props</Link>
           </li>
+
+          <li>
+            <Link to={"/ParamHandle"}>Check Id</Link>
+          </li>
         </ul>
       </div>
     );
