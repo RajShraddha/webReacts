@@ -5,36 +5,66 @@ class Form extends React.Component {
     super(props);
     this.state = {
       txtUsername: "",
-      formErrors: {
-        txtUsernameErr: ""
-      },
-      fieldValidity: {
-        txtUsername: false
-      },
-      formValid: false
+      Salary: "",
+      Achievements: "",
+      formErrors: {}
+      // fieldValidity: {},
+      // formValid: false
     };
   }
+
+  validate = (event) => {
+    if (Object.keys(this.state.formErrors).length > 0) {
+      event.preventDefault();
+    }
+  };
+
   ValidateUsername = (event) => {
     var name = event.target.value;
-    var formErrors = this.state.formErrors;
-    var fieldValidity = this.state.fieldValidity;
-    this.setState({ txtUsername: event.target.value });
-    if (name.length < 5) {
-      formErrors.txtUsernameErr = "Cannot be less than 5";
-      fieldValidity.txtUsername = false;
-    } else {
-      formErrors.txtUsernameErr = "";
-      fieldValidity.txtUsername = true;
-    }
+    var formErrorsCopy = this.state.formErrors;
+
+    // var fieldValidity = this.state.fieldValidity;
     this.setState({
-      formErrors: formErrors,
-      formValid: fieldValidity.txtUsername
+      txtUsername: event.target.value
+    });
+
+    if (name.length < 5) {
+      formErrorsCopy.txtUsernameErr = "Cannot be less than 5";
+      // fieldValidity.txtUsername = false;
+    } else {
+      delete formErrorsCopy["txtUsernameErr"];
+      // delete fieldValidity["txtUsername"];
+    }
+
+    this.setState({
+      formErrors: formErrorsCopy
+      // formValid: fieldValidity.txtUsername
     });
     // this.setState({ formValid: fieldValidity.txtUsername})
   };
+
+  validateSalary = (event) => {
+    var sal = event.target.value;
+    var formErrorsCopy = this.state.formErrors;
+
+    this.setState({ Salary: event.target.value });
+
+    if (isNaN(+sal)) {
+      formErrorsCopy.Salary = "Should be a number";
+    } else {
+      delete formErrorsCopy["Salary"];
+    }
+
+    this.setState({
+      formErrors: formErrorsCopy
+      // formValid: fieldValidity.txtUsername
+    });
+  };
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.validate}>
+        <label>Name </label>
         <input
           type="text"
           name="txtUsername"
@@ -42,6 +72,20 @@ class Form extends React.Component {
           onChange={this.ValidateUsername}
         />
         <div id="errorMsg">{this.state.formErrors.txtUsernameErr}</div>
+
+        <br />
+        <label>Salary </label>
+        <input
+          type="text"
+          name="Salary"
+          value={this.state.Salary}
+          onChange={this.validateSalary}
+        />
+        <div id="errorMsg">{this.state.formErrors.Salary}</div>
+        <br />
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
       </form>
     );
   }

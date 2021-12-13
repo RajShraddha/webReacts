@@ -25,9 +25,9 @@ class Welcome extends React.Component {
           </li>
         </ul>
 
-        <Link to={"/Form"}>
+        {/* <Link to={"/Form"}>
           <button type="button">Click to get the form</button>
-        </Link>
+        </Link> */}
       </div>
     );
   }

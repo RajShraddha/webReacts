@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./styles.css";
 
 class DisplayEmployee extends React.Component {
@@ -55,12 +56,14 @@ class DisplayEmployee extends React.Component {
           </button>
           <br />
           <br />
-          <button
-            onClick={() => this.setState({ selectedEmp: null })}
-            className="btn btn-secondary clickable"
-          >
-            Hide achievements
-          </button>
+          <Link to={"/Form"}>
+            <button
+              onClick={() => this.setState({ selectedEmp: null })}
+              className="btn btn-secondary clickable"
+            >
+              Edit details
+            </button>
+          </Link>
         </div>
       </div>
     );
