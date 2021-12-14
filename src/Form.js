@@ -7,7 +7,8 @@ class Form extends React.Component {
       txtUsername: "",
       Salary: "",
       Achievements: "",
-      formErrors: {}
+      formErrors: {},
+      buttonActive: true
       // fieldValidity: {},
       // formValid: false
     };
@@ -22,6 +23,7 @@ class Form extends React.Component {
   ValidateUsername = (event) => {
     var name = event.target.value;
     var formErrorsCopy = this.state.formErrors;
+    var buttonStatus = this.state.buttonActive;
 
     // var fieldValidity = this.state.fieldValidity;
     this.setState({
@@ -30,14 +32,17 @@ class Form extends React.Component {
 
     if (name.length < 5) {
       formErrorsCopy.txtUsernameErr = "Cannot be less than 5";
+      buttonStatus = true;
       // fieldValidity.txtUsername = false;
     } else {
       delete formErrorsCopy["txtUsernameErr"];
+      buttonStatus = false;
       // delete fieldValidity["txtUsername"];
     }
 
     this.setState({
-      formErrors: formErrorsCopy
+      formErrors: formErrorsCopy,
+      buttonActive: buttonStatus
       // formValid: fieldValidity.txtUsername
     });
     // this.setState({ formValid: fieldValidity.txtUsername})
@@ -83,7 +88,11 @@ class Form extends React.Component {
         />
         <div id="errorMsg">{this.state.formErrors.Salary}</div>
         <br />
-        <button type="submit" className="btn btn-primary">
+        <button
+          type="submit"
+          className="btn btn-primary"
+          disabled={this.state.buttonActive}
+        >
           Submit
         </button>
       </form>
